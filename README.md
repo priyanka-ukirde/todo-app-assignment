@@ -21,3 +21,20 @@
 	3) css beautificationS
 	4) Test case
 	
+# Output
+1) Add New Todo
+
+![alt text](https://github.com/priyanka-ukirde/todo-app-assignment/blob/master/UI-screens/add-new-todo.JPG "Add new Todo")
+
+2) After Adding Todo
+
+![alt text](https://github.com/priyanka-ukirde/todo-app-assignment/blob/master/UI-screens/after-adding-todo.JPG "After Adding Todo")
+
+2) Todo List 
+
+![alt text](https://github.com/priyanka-ukirde/todo-app-assignment/blob/master/UI-screens/todo-list.JPG "Todo List")
+
+3) Todo Detail page
+
+![alt text](https://github.com/priyanka-ukirde/todo-app-assignment/blob/master/UI-screens/todo-details.JPG "Todo Detail Page")
+
