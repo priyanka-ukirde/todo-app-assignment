@@ -91,15 +91,15 @@ export default class TodoForm extends React.Component {
                         <Form.Group controlId="formBasicPassword">
                             <Form.Label>Start Time</Form.Label>
                             <DateTimePicker
-                                onChange={this.state.onChangestartTime}
+                                onChange={this.onChangestartTime}
                                 value={this.state.startTime}
                             />
                         </Form.Group>
 
                         <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Start Time</Form.Label>
+                            <Form.Label>End Time</Form.Label>
                             <DateTimePicker
-                                onChange={this.state.onChangeEndTime}
+                                onChange={this.onChangeEndTime}
                                 value={this.state.endTime}
                             />
                         </Form.Group>

@@ -12,6 +12,7 @@ export default class Details extends React.Component {
     }
 
     render() {
+        let now = moment(new Date)
         if (this.props.location.state && this.props.location.state.data) {
             let detail = this.props.location.state.data
             return (
@@ -23,8 +24,10 @@ export default class Details extends React.Component {
                             <ListGroup.Item><b>Description</b>: {detail.description}</ListGroup.Item>
                             <ListGroup.Item><b>Start Time</b>: {moment(detail.startTime).format("YYYY-MM-DD HH:mm:ss")}</ListGroup.Item>
                             <ListGroup.Item><b>End Time</b>: {moment(detail.endTime).format("YYYY-MM-DD HH:mm:ss")}</ListGroup.Item>
+                            <ListGroup.Item><b>Remaining Time</b>: {moment.duration(now.diff(detail.endTime)).humanize()}</ListGroup.Item>
                         </ListGroup>
                     </Card>
+                    <Link to='/'>Go to Todo List</Link>
                 </div>
             )
         }

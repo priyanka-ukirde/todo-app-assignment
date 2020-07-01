@@ -19,19 +19,10 @@ class List extends React.Component {
         let todoList = JSON.parse(localStorage.getItem("listData"))
         if (todoList) {
             console.log(todoList)
-            this.addRemaningTime(todoList)
             this.setState({
                 todoList: todoList
             })
         }
-    }
-
-    addRemaningTime(todoList) {
-        return todoList.map((item) => {
-            let now = moment(new Date)
-            let timeRemaining = moment.duration(now.diff(item.endTime)).humanize()
-            item["remainingTime"] = timeRemaining
-        })
     }
 
 
@@ -53,6 +44,7 @@ class List extends React.Component {
     }
 
     render() {
+        let now = moment(new Date)
         if (this.state.todoList) {
             return (
                 <div className="container-fluid">
@@ -76,13 +68,11 @@ class List extends React.Component {
                                     {this.state.todoList.map((listItem) => {
                                         return (
                                             <tr onClick={() => this.showDetails(listItem)}>
-                                                
                                                 <td>{listItem['name']}</td>
                                                 <td>{listItem['description']}</td>
                                                 <td>{moment(listItem['startTime']).format("YYYY-MM-DD HH:mm:ss")}</td>
                                                 <td>{moment(listItem['endTime']).format("YYYY-MM-DD HH:mm:ss")}</td>
-                                                <td>{listItem['remainingTime']}</td>
-                                                
+                                                <td>{moment.duration(now.diff(listItem["endTime"])).humanize()}</td>
                                             </tr>
                                         );
                                     })}
